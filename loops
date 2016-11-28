@@ -1,0 +1,56 @@
+largest = None
+smallest = None
+while True:
+    num = raw_input("Enter a number: ")
+    if num == "done" : break
+    try:
+        num = float(num)
+    except:
+        print "Invalid input"
+        continue
+    if smallest is None :
+        smallest = num
+    if largest is None :
+        largest =num
+    if smallest <= num:
+        print "Minimum is:", smallest
+    elif smallest > num:
+        smallest = num
+        print "Minimum is:", smallest
+    if largest >= num:
+        print "Maximum is:" largest
+    elif largest < num:
+        largest = num
+        print "Maximum is:" largest  
+        
+-----------------------------------------------------------------------------------
+
+text = "X-DSPAM-Confidence:    0.8475";
+
+for t in text:
+	if t.isdigit():
+		print '\n' + t 
+		pos = text.find(t)
+		break
+
+num = text[pos:len(text)]
+num = float(num)
+print num
+#print t
+
+-----------------------------------------------------------------------------------
+
+x = '40'
+y = int(x) + 2
+print y
+
+t = 'From marquard@uct.ac.za'
+print t[14:17]
+
+for letter in 'banana' :
+	print letter
+	
+print len('banana')
+
+--------------------------------------------------------------------------------------
+
