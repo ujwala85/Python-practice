@@ -1,0 +1,36 @@
+
+x = {'A':0,'B':1,'C':2} 
+x['E'] = 4
+print x.values()
+
+import operator
+fname = raw_input("Enter filename: ")
+x = {}
+words = list()
+try:
+	fh = open(fname)
+except:
+	print "Invalid filename: ", fname
+for line in fh:
+	if line.startswith('From '):
+		words = line.split()
+		word = words[1]
+		if x.get(word,0) > 0:
+			x[word] = x.get(word,0) + 1
+        elif x.get(word, 0) == 0:
+			x[word] = 1
+	else:
+		continue
+print max(x, key=x.get), x[max(x, key=x.get)] 
+print x
+
+s = {}
+s = sorted(x.values())
+m = max(s)
+for k,v in x.items():
+	if v == m :
+		print k,v
+		
+sorted_x = sorted(x.items(), key=operator.itemgetter(1))
+print sorted_x[-1]
+
