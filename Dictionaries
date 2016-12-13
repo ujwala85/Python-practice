@@ -34,3 +34,29 @@ for k,v in x.items():
 sorted_x = sorted(x.items(), key=operator.itemgetter(1))
 print sorted_x[-1]
 
+
+
+
+fname = raw_input("Enter filename: ")
+x = {}
+words = list()
+w = list()
+t = ()
+try:
+	fh = open(fname)
+except:
+	print "Invalid filename: ", fname
+for line in fh:
+    if line.startswith('From '):
+        words = line.split()
+        word = words[5]
+        w = word.split(':')
+        t = w[0]
+        if x.get(t,0) > 0:
+			x[t] = x.get(t,0) + 1
+        elif x.get(t, 0) == 0:
+			x[t] = 1
+    else:
+        continue
+for k,v in sorted(x.items()):
+	print k,v
